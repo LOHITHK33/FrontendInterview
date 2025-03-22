@@ -5,6 +5,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0; /* Ensure no default margin */
+  background-color: #f8d3d3; /* Change background color to an even lighter red */
 }
 
 #root {
