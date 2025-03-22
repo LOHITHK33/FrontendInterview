@@ -1,16 +1,32 @@
-/* Add your custom styles here */
 body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #f0f4f8, #e0e7ff);
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0; /* Ensure no default margin */
-  background-color: #f8d3d3; /* Change background color to an even lighter red */
+  height: 100vh;
 }
 
-#root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Ensure it takes full height */
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+button {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
 }
