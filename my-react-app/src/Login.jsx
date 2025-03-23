@@ -1,30 +1,58 @@
+import React, { useState } from "react";
+import Footer from "./components/Dashboard/Footer";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; 
-import "./index.css"; 
 
-
-export default function Login() {
+function Login() {
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+  });
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCredentials({ ...credentials, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const username = e.target.username.value;
-    const password = e.target.password.value;
-    if (username === "admin" && password === "password") {
-      console.log("Login successful");
+    if (
+      credentials.username === import.meta.env.VITE_USERNAME &&
+      credentials.password === import.meta.env.VITE_PASSWORD
+    ) {
+      navigate("/dashboard");
     } else {
       navigate("/404");
     }
   };
 
   return (
-    <motion.div className="container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="username" placeholder="Username" required />
-        <input type="password" name="password" placeholder="Password" required />
-        <motion.button whileHover={{ scale: 1.05 }} type="submit">Sign In</motion.button>
-      </form>
-    </motion.div>
+    <>
+      <div className="login-container">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={credentials.username}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={credentials.password}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>      
+      </div>
+      <Footer />
+    </>
   );
 }
+
+export default Login;

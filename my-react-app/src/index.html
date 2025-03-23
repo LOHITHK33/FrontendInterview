@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My React App</title>
+    <style>
+      .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+      }
+
+      .dashboard-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 60px;
+        background-color: #e0e0e0;
+        border-bottom: 1px solid #000;
+      }
+
+      .header-title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .circular-button {
+        position: absolute;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dashboard-content {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      .sidebar {
+        width: 230px;
+        border-right: 1px solid #000;
+        overflow-y: auto;
+      }
+
+      .sidebar-title {
+        padding: 15px;
+        margin: 0;
+        font-size: 18px;
+        border-bottom: 1px solid #000;
+      }
+
+      .sidebar-content {
+        padding: 15px;
+      }
+
+      .main-content {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .dashboard-content {
+          flex-direction: column;
+        }
+        
+        .sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid #000;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
