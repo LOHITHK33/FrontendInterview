@@ -1,32 +1,107 @@
+/* General styles */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(120deg, #f0f4f8, #e0e7ff);
-  color: #333;
+  padding: 0;
+  background-color: #f4f4f4;
+  overflow: hidden; /* Prevent scroll bar */
+}
+
+/* Login styles */
+.login-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: calc(100vh - 50px); /* Adjust height to account for footer */
+}
+
+/* Not Found styles */
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 50px); /* Adjust height to account for footer */
+}
+
+.not-found-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 200px;
+}
+
+.login-container button {
+  padding: 10px;
+  background-color: #d36055;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dashboard styles */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
 }
 
-.container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-button {
-  background: linear-gradient(90deg, #007bff, #0056b3);
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #007bff;
   color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.3s;
 }
 
-button:hover {
-  transform: scale(1.05);
+.header-title {
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.dashboard-header button {
+  padding: 10px;
+  background-color: #d36055;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboard-content {
+  flex: 1;
+  display: flex;
+}
+
+.dashboard-content button {
+  padding: 10px;
+  background-color: #d36055;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboard-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
 }

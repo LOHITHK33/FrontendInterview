@@ -1,17 +1,25 @@
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import "./index.css";
+import React from 'react';
+import Header from './components/Dashboard/Header';
+import Footer from './components/Dashboard/Footer';
+import { useNavigate } from 'react-router-dom';
 
-export default function NotFound() {
+function NotFound() {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate('/');
+  };
+
   return (
-    <motion.div className="container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-      <h1 style={{ color: "red", fontSize: "48px" }}>404</h1>
-      <p>Oops! Page not found.</p>
-      <motion.div whileHover={{ scale: 1.05 }}>
-        <Link to="/">
-          <button>Go Home</button>
-        </Link>
-      </motion.div>
-    </motion.div>
+    <div className="not-found-container">
+      <div className="not-found-content">
+        <h2>404 - Page Not Found</h2>
+        <p>The page you are looking for does not exist.</p>
+        <button onClick={handleGoBack}>Go back to Login page</button>
+      </div>
+      <Footer />
+    </div>
   );
 }
+
+export default NotFound;
